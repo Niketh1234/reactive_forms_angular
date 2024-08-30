@@ -1,0 +1,6 @@
+.admin-container{
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}

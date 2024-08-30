@@ -1,0 +1,18 @@
+<div class="form">
+  <form (ngSubmit)="onSubmit()">
+    <label>Email : </label>
+    <input type="text" formControlName="username" /><br />
+    @if(username?.touched && username?.errors?.['required']){
+    <span class="text-danger">Email is required</span><br />
+    } @if(username?.touched && username?.errors?.['email']){
+    <span class="text-danger">Email is not valid</span><br />
+    }
+    <label>Password : </label>
+    <input type="password" formControlName="password" /><br />
+    @if(password?.touched && password?.errors?.['minlength']){
+    <span class="text-danger">Password must contain atleast 6 characters</span
+    ><br />
+    }
+    <input type="submit" value="Register" [disabled]="registerForm.invalid" />
+  </form>
+</div>
